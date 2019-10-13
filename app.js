@@ -3,7 +3,12 @@
 const  bobo = {
     name: 'Bobo',
     job: 'Front-End Master',
-    age: 25
+    age: 25,
+    address: {
+        city: 'dhaka',
+        area: 'mirpur',
+        country: 'bd'
+    }
 }
 
 const  renameProp = ( oldProp, newProp, { [oldProp]:old, ...others }) => ({
@@ -11,5 +16,15 @@ const  renameProp = ( oldProp, newProp, { [oldProp]:old, ...others }) => ({
     ...others
 })
 
-const newBobo = renameProp('name', 'firstName', bobo)
-console.log(newBobo)
+const newBobo = renameProp('area', 'nameOfArea', bobo.address)
+
+const bobonew = (propName, {[propName]:newAddress}) => {
+return {
+    ...bobo,
+    newAddress: newBobo
+
+}
+}
+
+console.log(bobonew('address', bobo))
+
