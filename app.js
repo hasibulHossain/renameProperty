@@ -18,6 +18,7 @@ const  renameProp = ( oldProp, newProp, { [oldProp]:old, ...others }) => ({
 
 const newBobo = renameProp('area', 'nameOfArea', bobo.address)
 
+//Adding method rename functionality
 const bobonew = (propName, {[propName]:newAddress}) => {
 return {
     ...bobo,
